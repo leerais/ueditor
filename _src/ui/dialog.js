@@ -50,7 +50,9 @@
                 className: 'edui-dialog-modalmask',
                 theme:theme,
                 onclick: function (){
-                    activeDialog && activeDialog.close(false);
+                    if (me.editor.options.clickToCloseModal) {
+                        activeDialog && activeDialog.close(false);
+                    }
                 }
             })));
             this.dragMask = (dragMask || (dragMask = new Mask({
